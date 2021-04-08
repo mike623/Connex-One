@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  width: 100%;
+}
+.lhs,
+.rhs {
+  flex: 1;
+  padding: 10px;
+}
