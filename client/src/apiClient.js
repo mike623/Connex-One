@@ -6,8 +6,7 @@ const service = axios.create({
 
 const toData = (d) => d.data;
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default (isAuth = true) => {
+function ApiClient(isAuth = true) {
   service.interceptors.request.use(
     (config) => {
       if (isAuth) config.headers["Authorization"] = "Bearer mysecrettoken";
@@ -26,4 +25,6 @@ export default (isAuth = true) => {
       return service.get("/metrics").then(toData);
     },
   };
-};
+}
+
+export default ApiClient(!window.location.search.includes("auth=false"));

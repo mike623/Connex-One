@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import ApiClient from "./apiClient";
+import api from "./apiClient";
 
-const api = ApiClient(!window.location.search.includes("auth=false"));
 
 const SERVER_REFRESH_IN_SEC = 30;
 
